@@ -1,4 +1,5 @@
 import requests
+import base64
 from fastapi import FastAPI, UploadFile, WebSocket, WebSocketDisconnect, Form
 from supabase import create_client, Client
 import os
