@@ -1,17 +1,18 @@
 import requests
 from fastapi import FastAPI, UploadFile, WebSocket, WebSocketDisconnect, Form
 from supabase import create_client, Client
+import os
 
-api_key = API_KEY
-api_sec = API_SEC
+api_key = os.environ.get('API_KEY')
+api_sec = os.environ.get('API_SEC')
 
 face_search_url = "https://api-us.faceplusplus.com/facepp/v3/search"
 detect_face_url = "https://api-us.faceplusplus.com/facepp/v3/detect"
 
 app = FastAPI()
 supabase: Client = create_client(
-    SUP_API_KEY, 
-    SUP_API_SEC)
+    os.environ.get('SUP_API_KEY'), 
+    os.environ.get('SUP_API_SEC')
 
 who = {'9b0041c309fab2f2d507eed2a9051c94': 'Boaz', 'afd06dbb42d96f85c77c269f42347ca4': 'Derek', '7e74b03f1539f93cbb7d6a72016f32a8': 'Ryan'} 
 
