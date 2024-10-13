@@ -44,3 +44,12 @@ async def register_pic(file: UploadFile):
     else:
         print("Error")
         print(response.text)
+
+
+@app.get("/album")
+async def album(username: str):
+    try:
+        response = supabase.storage.from_(username).list()
+        return {"files": response}
+    except Exception as e:
+        return {"error": str(e)}
