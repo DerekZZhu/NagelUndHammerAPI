@@ -1,6 +1,5 @@
 import requests
 from fastapi import FastAPI, UploadFile, WebSocket, WebSocketDisconnect, Form
-from keys import key, sec, s_key, s_sec
 from supabase import create_client, Client
 
 api_key = key
