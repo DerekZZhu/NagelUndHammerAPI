@@ -37,7 +37,7 @@ async def register_pic(file: UploadFile):
         # return {"matched_uid": str(who[str(results)])}
         name = str(who[str(results)])
         print(name)
-        response = supabase.table("Profiles").select("*").execute()
+        response = supabase.table("Profiles").select("*").eq("username", name).execute()
         print(response)
         return response
 
