@@ -1,0 +1,4 @@
+fastapi==0.95.2
+requests==2.31.0
+python-supabase==0.0.7
+websockets==11.0.3
